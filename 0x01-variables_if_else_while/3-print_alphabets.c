@@ -1,7 +1,8 @@
- #include <stdio.h>
- 
- /**
+#include <stdio.h>
+
+/**
  * main - block
+ *
  * Return: 0 always
  */
 
