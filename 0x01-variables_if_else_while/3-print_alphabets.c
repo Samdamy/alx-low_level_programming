@@ -1,14 +1,13 @@
-#include <stdio.h>
+ #include <stdio.h>
 
-/**
- * main - Block
- *
+ /**
+ * main - entry
  * Return: 0 if successful
- *
  */
 
-int main(void)
-{
+ int main(void)
+
+ { 
 	for (char set1 = 'a'; set1 <= 'z'; set1++)
 	char set1;
 
@@ -21,4 +20,4 @@ int main(void)
 		putchar(set2);
 	putchar('\n');
 	return (0);
-}
+ }
