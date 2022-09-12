@@ -1,8 +1,8 @@
-#include <stdio.h>
-
-/**
- * main - entry
- * @@ -8,9 +9,13 @@
+ #include <stdio.h>
+ 
+ /**
+ * main - block
+ * Return: 0 always
  */
 
  * int main(void)
