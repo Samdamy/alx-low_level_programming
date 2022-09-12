@@ -3,7 +3,8 @@
 /**
  * main - entry
  * @@ -8,9 +9,13 @@
- *
+ */
+
  * int main(void)*
 
  {
