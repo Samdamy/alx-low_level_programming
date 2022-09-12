@@ -7,7 +7,6 @@
  */
 
  * int main(void)
-
  {
  	for (char set1 = 'a'; set1 <= 'z'; set1++)
 
