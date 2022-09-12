@@ -6,7 +6,7 @@
  * Return: 0 always
  */
 
- * int main(void)
+ int main(void)
  {
  	for (char set1 = 'a'; set1 <= 'z'; set1++)
 
