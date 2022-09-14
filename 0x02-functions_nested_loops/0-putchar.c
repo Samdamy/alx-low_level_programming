@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * main - entry block
  * Description: Print _purchar followed by a new line
