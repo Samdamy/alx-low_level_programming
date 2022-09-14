@@ -3,7 +3,7 @@
  * main - entry block
  * Description: Print _purchar followed by a new line
  * The program should 0
- * return: 0
+ * Return: 0
  */
 int main(void)
 {
