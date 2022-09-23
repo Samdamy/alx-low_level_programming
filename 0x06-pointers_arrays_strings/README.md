@@ -1,1 +1,1 @@
-strcat
+1-strncat.c
