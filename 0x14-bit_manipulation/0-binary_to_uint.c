@@ -1,55 +1,37 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
-* rPow -    Raises a number to a specified power
-* @a:       Number to be raised to power
-* @b:       Power a should be raised to
-* Return:   a ** b
-*/
-
-unsigned int rPow(int a, unsigned int b)
-	{
-	unsigned int i;
-	unsigned int v = 1;
-
-	for (i = 0; i < b; i++)
-		v *= a;
-	return (v);
-	}
-
-/**
-* binary_to_uint -	Converts a string of binary numbers to unsigned int
-* @b:				Pointer to the string
-* Return:			The converted number
-*					0 if one or more characters in the string is
-*						not 0 or 1
-*					0 if b is NULL
-*/
-
+ * binary_to_uint - converts a binary number to an
+ * unsigned int.
+ * @b: binary.
+ *
+ * Return: unsigned int.
+ */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int error = 0, rValue = 0;
+	unsigned int ui;
+	int len, base_two;
 
-	if (b == NULL)
-		return (error);
+	if (!b)
+		return (0);
 
-	else
+	ui = 0;
+
+	for (len = 0; b[len] != '\0'; len++)
+		;
+
+	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+	{
+		if (b[len] != '0' && b[len] != '1')
 		{
-		unsigned int loop, len = strlen(b);
-
-		len--;
-		for (loop = 0; loop <= len; loop++)
-			{
-			char c = b[loop];
-
-			if (c != '0' && c != '1')
-				return (error);
-
-			else
-				{
-				rValue += (((unsigned int)c - 48) * rPow(2, (len - loop)));
-				}
-			}
-		return (rValue);
+			return (0);
 		}
+
+		if (b[len] & 1)
+		{
+			ui += base_two;
+		}
+	}
+
+	return (ui);
 }
