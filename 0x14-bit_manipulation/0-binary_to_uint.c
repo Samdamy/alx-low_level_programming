@@ -1,26 +1,55 @@
 #include "main.h"
 
 /**
- * binary_to_uint - Converts a binary number to an unsigned int.
- * @b: A pointer to a string of 0 and 1 chars.
- *
- * Return: If b is NULL or contains chars not 0 or 1 - 0.
- *         Otherwise - the converted number.
- */
-unsigned int binary_to_uint(const char *b)
-{
-	unsigned int num = 0;
-	int len = 0;
+* rPow -    Raises a number to a specified power
+* @a:       Number to be raised to power
+* @b:       Power a should be raised to
+* Return:   a ** b
+*/
 
-	if (b[len] == '\0')
-		return (0);
-
-	while ((b[len] == '0') || (b[len] == '1'))
+unsigned int rPow(int a, unsigned int b)
 	{
-		num <<= 1;
-		num += b[len] - '0';
-		len++;
+	unsigned int i;
+	unsigned int v = 1;
+
+	for (i = 0; i < b; i++)
+		v *= a;
+	return (v);
 	}
 
-	return (num);
+/**
+* binary_to_uint -	Converts a string of binary numbers to unsigned int
+* @b:				Pointer to the string
+* Return:			The converted number
+*					0 if one or more characters in the string is
+*						not 0 or 1
+*					0 if b is NULL
+*/
+
+unsigned int binary_to_uint(const char *b)
+{
+	unsigned int error = 0, rValue = 0;
+
+	if (b == NULL)
+		return (error);
+
+	else
+		{
+		unsigned int loop, len = strlen(b);
+
+		len--;
+		for (loop = 0; loop <= len; loop++)
+			{
+			char c = b[loop];
+
+			if (c != '0' && c != '1')
+				return (error);
+
+			else
+				{
+				rValue += (((unsigned int)c - 48) * rPow(2, (len - loop)));
+				}
+			}
+		return (rValue);
+		}
 }
